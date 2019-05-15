@@ -1,0 +1,26 @@
+{% extends "info\index.html" %}
+
+{% block main %}
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <br/><br/><br/>
+        <div class="jumbotron">
+          <h1 class="display-4">Вітаємо, {{ data.name }}!</h1>
+          <p class="lead"><strong>Ваші магазини:</strong> {% for key, value in data.shops.items %} {{ value }}, {% endfor %}</p>
+          <p class="lead"><strong>Дата першого чеку:</strong> {{ data.date_from }}</p>
+          <p class="lead"><strong>Дата останнього чеку:</strong> {{ data.date_to }}</p>
+          <hr class="my-4">
+          <p>Виберіть яку інформацію потрібно відобразити:</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-block" href="general/" role="button">Основні показники</a><br/>
+            <a class="btn btn-primary btn-large btn-block" href="up/" role="button">Товари, які виросли в продажах</a><br/>
+            <a class="btn btn-primary btn-large btn-block" href="down/" role="button">Товари, які впали в продажах</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+{% endblock %}

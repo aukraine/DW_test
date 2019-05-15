@@ -1,0 +1,53 @@
+{% extends "info\index.html" %}
+
+{% block main %}
+  <div class="container">
+    <div class="col-2"></div>
+    <div class="col-11">
+      <br/><br/><br/>
+      <h2>Основні показники:</h2><br/>
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Показник</th>
+            <th scope="col">{{ data.date_from }}</th>
+            <th scope="col">{{ data.date_to }}</th>
+            <th scope="col">Різниця в %</th>
+            <th scope="col">Різниця</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Оборот</th>
+            <td>{{ data.turnover.from }}</td>
+            <td>{{ data.turnover.to }}</td>
+            <td>{{ data.turnover.percent }}</td>
+            <td>{{ data.turnover.diff }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Кількість товарів</th>
+            <td>{{ data.quantity.from }}</td>
+            <td>{{ data.quantity.to }}</td>
+            <td>{{ data.quantity.percent }}</td>
+            <td>{{ data.quantity.diff }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Кількість чеків</th>
+            <td>{{ data.receipts.from }}</td>
+            <td>{{ data.receipts.to }}</td>
+            <td>{{ data.receipts.percent }}</td>
+            <td>{{ data.receipts.diff }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Середній чек</th>
+            <td>{{ data.average.from }}</td>
+            <td>{{ data.average.to }}</td>
+            <td>{{ data.average.percent }}</td>
+            <td>{{ data.average.diff }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a class="btn btn-primary btn-large" href="/home/" role="button">Back</a><br/>
+  </div>
+{% endblock %}
